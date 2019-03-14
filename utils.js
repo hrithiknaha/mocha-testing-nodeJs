@@ -1,7 +1,12 @@
-module.exports.add = function add(a,b){
+function add(a,b){
     return a+b;
 }
 
-module.exports.square = function square(a){
+function square(a){
     return a*a;
+}
+
+module.exports = {
+    add,
+    square
 }
