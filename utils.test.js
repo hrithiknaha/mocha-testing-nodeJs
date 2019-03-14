@@ -1,17 +1,25 @@
+const expect = require("expect");
+
 const utils = require("./utils");
 
 it('should add two numbers', function(){
     var res = utils.add(33,11);
-
-    if(res !== 44){
-        throw new Error(`Expected 44, but got ${res}`);
-    }
+    expect(res).toBe(44);
 })
 
 it('should square the number', function(){
     var res = utils.square(9);
+    expect(res).toBe(81);
+})
 
-    if(res !== 81){
-        throw new Error(`Expected 81, but got ${res}`);
-    }
+it('should include the name', function(){
+    var res = utils.nameInclude({
+        Address : "Newtown",
+        Age : 20
+    },'Hrithik Naha')
+
+    expect(res).toInclude({
+        firstName: "Hrithik",
+        lastName: "Naha"
+    })
 })
