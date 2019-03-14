@@ -6,6 +6,12 @@ function square(a){
     return a*a;
 }
 
+function aSyncSquare(a, callback){
+    setTimeout(function(){
+        callback(a*a)
+    }, 1000);
+};
+
 function nameInclude(user, fullName){
     var names = fullName.split(' ');
     user.firstName = names[0];
@@ -16,5 +22,6 @@ function nameInclude(user, fullName){
 module.exports = {
     add,
     square,
-    nameInclude
+    nameInclude,
+    aSyncSquare
 }

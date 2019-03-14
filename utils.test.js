@@ -12,6 +12,13 @@ it('should square the number', function(){
     expect(res).toBe(81);
 })
 
+it('should squatre the number ascynchronously', function(done){
+    utils.aSyncSquare(9, function(square){
+        expect(square).toBe(81);
+        done();
+    });
+})
+
 it('should include the name', function(){
     var res = utils.nameInclude({
         Address : "Newtown",
